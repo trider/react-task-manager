@@ -2,7 +2,6 @@
   "name": "react-task-manager",
   "version": "0.1.0",
   "private": true,
-  "home":"https://github.com/trider/react-task-manager",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
