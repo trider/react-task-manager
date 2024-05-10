@@ -25,7 +25,6 @@ const ModalComponent = (props) => {
     if(props.title === 'Edit'){
       return (
         <Form.Group className="mb-3" controlId="taskStatus">
-        <Form.Label>Status</Form.Label>
         <Form.Select onChange={(e) => setTaskStatus(e.target.value)}>
           {states.map((state) => (<option key={state} value={state}>{state}</option>))}
         </Form.Select>
@@ -108,7 +107,6 @@ const ModalComponent = (props) => {
 
               />
             </Form.Group>
-            {getMenu()}
 
 
 

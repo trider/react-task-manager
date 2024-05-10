@@ -89,7 +89,7 @@ const TaskTable = () => {
           <tr style={{ height: "40px" }}>
 
             <td colSpan={tableCols.length + 2} style={{ backgroundColor: "white" }}>
-              <div className="d-grid gap-2 d-md-flex justify-content-md-center">
+              {/* <div className="d-grid gap-2 d-md-flex justify-content-md-center"> */}
                 <ModalComponent
                   title='Add'
                   task={{
@@ -103,9 +103,10 @@ const TaskTable = () => {
                     isActive: true,
                     isEdit: false
                   }}
+                  size='lg'
                   onAddTask={addTask}
                   onEditTask={updateTask} />
-              </div>
+              {/* </div> */}
 
 
 

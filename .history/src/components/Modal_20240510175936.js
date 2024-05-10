@@ -19,21 +19,16 @@ const ModalComponent = (props) => {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const getMenu = () => {
+  const getStates = () => {
 
-
-    if(props.title === 'Edit'){
-      return (
-        <Form.Group className="mb-3" controlId="taskStatus">
-        <Form.Label>Status</Form.Label>
+    return (
+      <Form.Group className="mb-3" controlId="taskStatus">
         <Form.Select onChange={(e) => setTaskStatus(e.target.value)}>
           {states.map((state) => (<option key={state} value={state}>{state}</option>))}
         </Form.Select>
       </Form.Group>
-      )
-    }
 
-    
+    )
 
 
   }
@@ -108,7 +103,6 @@ const ModalComponent = (props) => {
 
               />
             </Form.Group>
-            {getMenu()}
 
 
 

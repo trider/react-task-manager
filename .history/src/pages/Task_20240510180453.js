@@ -103,6 +103,7 @@ const TaskTable = () => {
                     isActive: true,
                     isEdit: false
                   }}
+                  size='lg'
                   onAddTask={addTask}
                   onEditTask={updateTask} />
               </div>
