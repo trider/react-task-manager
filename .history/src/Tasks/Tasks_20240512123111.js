@@ -13,46 +13,8 @@ import ModalComponent from '../components/Modal';
 import userTasks from '../_data/_Tasks';
 import tableCols from '../_data/_Cols';
 
-
-
-const tasksReducer = (tasks, action) => {
-  switch (action.type) {
-    case 'added': {
-      return [
-        ...tasks,
-        {
-          id: action.id,
-          ...action.task,
-          done: false,
-        },
-      ];
-    }
-
-    case 'changed': {
- 
-    
-      return tasks.map((t) => {
-       if (t.taskId === action.task.taskId) return action.task
-       
-  
-       return t;
- 
-      })
- 
- 
-       
-   
-      
- 
-    }
-    case 'deleted': {
-      return tasks.filter((t) => t.taskId !== action.task.taskId);
-    }
-    default: {
-      throw Error('Unknown action: ' + action.type);
-    }
-  }
- }
+import { TasksContext, TasksDispatchContext } from './_tasksContext';
+import tasksReducer from '../_Reducers/tasksReducer';
 
 const TaskTable = () => {
 
@@ -84,6 +46,8 @@ const TaskTable = () => {
   }
 
   return (
+   <TasksContext.Provider value={{ tasks }}>
+    <TasksDispatchContext.Provider value={{ dispatch}}>
     <div >
       <Table striped bordered hover size="lg">
         <thead>
@@ -160,6 +124,11 @@ const TaskTable = () => {
 
 
     </div>
+      
+     </TasksDispatchContext.Provider>
+    </TasksContext.Provider>
+
+
   );
 }
 

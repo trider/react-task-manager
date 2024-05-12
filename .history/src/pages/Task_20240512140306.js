@@ -12,7 +12,7 @@ import ModalComponent from '../components/Modal';
 
 import userTasks from '../_data/_Tasks';
 import tableCols from '../_data/_Cols';
-
+// import tasksReducer from '../_Reducers/tasksReducer';
 
 
 const tasksReducer = (tasks, action) => {
@@ -27,10 +27,18 @@ const tasksReducer = (tasks, action) => {
         },
       ];
     }
-
+    case 'edit': {
+     return tasks.map((t) => {
+       if (tasks.filter((t) => t.isEdit === true).length < 1) {
+             if (t.taskId === action.task.taskId) t = !t.isEdit;  
+           }
+      return t;
+     });
+   }
     case 'changed': {
  
-    
+     
+ 
       return tasks.map((t) => {
        if (t.taskId === action.task.taskId) return action.task
        

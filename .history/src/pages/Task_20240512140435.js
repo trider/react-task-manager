@@ -30,7 +30,8 @@ const tasksReducer = (tasks, action) => {
 
     case 'changed': {
  
-    
+     
+ 
       return tasks.map((t) => {
        if (t.taskId === action.task.taskId) return action.task
        
